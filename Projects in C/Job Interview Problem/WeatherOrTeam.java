@@ -6,6 +6,7 @@ However, I decided against it, because those two classes do not have additional/
 attributes or methods */
 
 class WeatherOrTeam { 
+    
     private String type; //"weather" or "team"
     private String identificator; //day for weathers and name for teams
     private int value1; //mxT for weather, goals for team
@@ -33,12 +34,12 @@ class WeatherOrTeam {
     } 
     
     @Override public String toString() { 
+        
         if (type.equals("Day")){
             return "Weather [day=" + identificator + ", MxT =" + value1 + ", MnT=" + value2 + ", TempSpread=" + spread + "]"; 
         }
         else{
             return "Team [name=" + identificator + ", Goals =" + value1 + ", GoalsAllowed=" + value2 + ", Spread=" + spread + "]"; 
-        }
-        
+        }    
     } 
 }
