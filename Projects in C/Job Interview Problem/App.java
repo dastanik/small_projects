@@ -1,4 +1,3 @@
-
 import java.util.*; 
 import java.io.BufferedReader; 
 import java.io.IOException; 
@@ -40,9 +39,11 @@ public final class App {
     } 
     
     private static List<WeatherOrTeam> readFromCSV(String fileName) { 
+        
         List<WeatherOrTeam> weatherOrTeamList = new ArrayList<>(); 
         Path pathToFile = Paths.get(fileName);
         try (BufferedReader br = Files.newBufferedReader(pathToFile, StandardCharsets.US_ASCII)) { 
+         
             String line = br.readLine(); 
             String firstWord = line.split(",")[0]; 
             line = br.readLine(); //read next line 
@@ -52,7 +53,9 @@ public final class App {
                 weatherOrTeamList.add(obj);  
                 line = br.readLine(); 
             }
+         
         } catch (IOException ioe) { 
+            
             ioe.printStackTrace(); 
             
         } 
@@ -71,6 +74,7 @@ public final class App {
             
             val1 = Integer.parseInt(metadata[1]); 
             val2 = Integer.parseInt(metadata[2]); 
+         
         } else {
             
             val1 = Integer.parseInt(metadata[5]); 
@@ -88,9 +92,7 @@ public final class App {
                 return Integer.compare(obj1.getSpread(), obj2.getSpread());
             }
         });
-        
-        
-        
+  
         return weatherOrTeamList.get(0).getType() + " " + weatherOrTeamList.get(0).getIdentificator() +
         " has the smallest temperature spread that equals " + weatherOrTeamList.get(0).getSpread(); 
     }
