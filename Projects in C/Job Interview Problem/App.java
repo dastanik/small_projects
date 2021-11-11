@@ -94,7 +94,7 @@ public final class App {
         });
   
         return weatherOrTeamList.get(0).getType() + " " + weatherOrTeamList.get(0).getIdentificator() +
-        " has the smallest temperature spread that equals " + weatherOrTeamList.get(0).getSpread(); 
+        " has the smallest spread that equals " + weatherOrTeamList.get(0).getSpread(); 
     }
 
 }
